@@ -1,0 +1,24 @@
+npm init -y
+npm install -D parcel
+npm install react react-dom
+## some changes on package.json
+npx parcel index.html ## parcel goes to index.html(src point) and build a development build and host that development build on localhost:port
+## npx means executing a package
+
+In package.json do : script { "start": "parcel index.html"}
+
+install react instead of using CDN links to avoid netowrk calls
+
+import React from "react";
+import ReactDOM from 'react-dom/client';
+normal JS don't have import so by using type="module" telling browser that it is not a normal JS as we are using module for import export for files
+
+npx parcel build index.html(for production build) : remove "main": "index.js/App.js" from package.json
+
+dist contains dev or production build code
+.parcel-cache and dist also get automatically generated so put them in .gitignore
+
+## Config driven UI
+- Different data based on different location
+- Website is driven by data|configs
+- Controlling your UI how the UI looks like using data, using the config i.e. data coming from backend
